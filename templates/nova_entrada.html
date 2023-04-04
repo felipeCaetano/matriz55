@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Nova entrada de dados</title>
+</head>
+<body>
+	<h1>Nova entrada de dados</h1>
+	<form action="{{ url_for('nova_entrada') }}" method="post">
+		<label for="nome">Nome:</label>
+		<input type="text" id="nome" name="nome" required><br>
+
+		<label for="data">Data:</label>
+		<input type="date" id="data" name="data" required><br>
+
+		<label for="risco">Risco:</label>
+		<select id="risco" name="risco" required>
+			<option value="1">Baixo</option>
+			<option value="2">Moderado</option>
+			<option value="3">Alto</option>
+		</select><br>
+
+		<label for="descricao">Descrição:</label><br>
+		<textarea id="descricao" name="descricao" rows="5" cols="50" required></textarea><br>
+
+		<button type="submit">Salvar</button>
+	</form>
+</body>
+</html>
