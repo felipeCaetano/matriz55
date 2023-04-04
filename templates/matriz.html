@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Matriz de risco</title>
+	<style>
+		table {
+			border-collapse: collapse;
+		}
+
+		td {
+			border: 1px solid black;
+			width: 50px;
+			height: 50px;
+			text-align: center;
+		}
+
+		.zero {
+			background-color: white;
+		}
+
+		.um {
+			background-color: yellow;
+		}
+
+		.dois {
+			background-color: orange;
+		}
+
+		.tres {
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<h1>Matriz de risco</h1>
+	<table>
+		{% for linha in matriz %}
+		<tr>
+			{% for valor in linha %}
+			<td class="{{ valor|default('zero') }}">{{ valor }}</td>
+			{% endfor %}
+		</tr>
+		{% endfor %}
+	</table>
+</body>
+</html>
