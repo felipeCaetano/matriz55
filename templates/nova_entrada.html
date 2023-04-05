@@ -1,28 +1,81 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Nova entrada de dados</title>
+    <title>Formulário - Matriz de Riscos</title>
+    <style>
+        /* Estilos para o formulário */
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f2f2f2;
+            border-radius: 5px;
+            font-family: Arial, sans-serif;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            height: 100px;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-	<h1>Nova entrada de dados</h1>
-	<form action="{{ url_for('nova_entrada') }}" method="post">
-		<label for="nome">Nome:</label>
-		<input type="text" id="nome" name="nome" required><br>
-
-		<label for="data">Data:</label>
-		<input type="date" id="data" name="data" required><br>
-
-		<label for="risco">Risco:</label>
-		<select id="risco" name="risco" required>
-			<option value="1">Baixo</option>
-			<option value="2">Moderado</option>
-			<option value="3">Alto</option>
-		</select><br>
-
-		<label for="descricao">Descrição:</label><br>
-		<textarea id="descricao" name="descricao" rows="5" cols="50" required></textarea><br>
-
-		<button type="submit">Salvar</button>
-	</form>
+    <h1>Formulário - Matriz de Riscos</h1>
+    <form action="/nova_entrada" method="post">
+		<label for="ativida">Atividade:</label>
+        <input type="text" id="ativida" name="atividade" required>
+        <br>
+		<label for="perigo">Perigo:</label>
+        <input type="text" id="perigo" name="perigo" required>
+        <br>
+		<label for="danos">Danos e Impacto:</label>
+        <input type="text" id="danos" name="danos" required>
+        <br>
+        <label for="risco">Risco:</label>
+        <input type="text" id="risco" name="risco" required>
+        <br>
+        <label for="descricao">Descrição:</label>
+        <textarea id="descricao" name="descricao" required></textarea>
+        <br>
+        <label for="probabilidade">Probabilidade:</label>
+        <input type="number" id="probabilidade" name="probabilidade" min="1" max="5" required>
+        <br>
+        <label for="severidade">Severidade:</label>
+        <input type="number" id="severidade" name="severidade" min="1" max="5" required>
+        <br>
+        <label for="acoes">Ações:</label>
+        <textarea id="acoes" name="acoes" required></textarea>
+        <br>
+        <input type="submit" value="Salvar">
+    </form>
 </body>
 </html>

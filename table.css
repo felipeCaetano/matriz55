@@ -15,6 +15,11 @@ td:first-child {
   text-align: left;
 }
 
+.severidade{
+  font-weight: normal; 
+  text-align: center;
+}
+
 tr:first-child td {
   font-weight: bold;
   background-color: #ccc;
